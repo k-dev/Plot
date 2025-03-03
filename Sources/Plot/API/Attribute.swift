@@ -64,10 +64,10 @@ extension Attribute: NodeConvertible {
 
 extension Attribute: AnyAttribute {
     func render() -> String {
-        guard let value = nonEmptyValue else {
+        guard let nonNilValue = value else {
             return ignoreIfValueIsEmpty ? "" : name
         }
 
-        return "\(name)=\"\(value)\""
+        return "\(name)=\"\(nonNilValue)\""
     }
 }

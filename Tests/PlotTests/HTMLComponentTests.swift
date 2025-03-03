@@ -378,7 +378,7 @@ final class HTMLComponentTests: XCTestCase {
         <form action="url.com" method="post">\
         <fieldset>\
         <label>Username\
-        <input type="text" name="username" required autofocus autocomplete="off"/>\
+        <input type="text" name="username" value="" required autofocus autocomplete="off"/>\
         </label>\
         <label class="password-label">Password\
         <input type="password" name="password" class="password-input"/>\
@@ -411,7 +411,7 @@ final class HTMLComponentTests: XCTestCase {
 
     func testImageWithoutDescription() {
         let html = Image("image.png").render()
-        XCTAssertEqual(html, #"<img src="image.png"/>"#)
+        XCTAssertEqual(html, #"<img src="image.png" alt=""/>"#)
     }
 
     func testLinkRelationshipAndTarget() {
